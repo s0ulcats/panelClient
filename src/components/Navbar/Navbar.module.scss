@@ -1,0 +1,32 @@
+.nav {
+  background-color: none;
+  color: var(--light-link-color);
+  padding: 1rem;
+  border-bottom: 2px solid #000;
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .logoutBtn,
+  .loginBtn {
+    background: none;
+    color: #7A7A7A;
+    font-size: 40;
+    border: 2px solid #000;
+    border-radius: 20;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: 2px solid #7A7A7A;
+    }
+  }
+}

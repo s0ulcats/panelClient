@@ -1,0 +1,116 @@
+{
+  "navigation": {
+    "home": "Главная",
+    "add_post": "Добавить пост",
+    "users": "Пользователи",
+    "recordings": "Записи",
+    "logout": "Выйти",
+    "settings": "Настройки",
+    "direct": "Сообщение"
+  },
+  "messages": {
+    "message_unavailable": "Сообщение недоступно",
+    "attached": "Прикреплено",
+    "enter_message": "Введите сообщение",
+    "unknown_user": "Неизвестный пользователь"
+  },
+  "tooltips": {
+    "name": "Если это указано не ваше имя, поменяйте его в настройках.",
+    "phone": "Если это не ваш номер телефона, измените его в настройках."
+  },
+  "calendar": {
+    "months": {
+      "january": "Январь",
+      "february": "Февраль",
+      "march": "Март",
+      "april": "Апрель",
+      "may": "Май",
+      "june": "Июнь",
+      "july": "Июль",
+      "august": "Август",
+      "september": "Сентябрь",
+      "october": "Октябрь",
+      "november": "Ноябрь",
+      "december": "Декабрь"
+    },
+    "days": {
+      "monday": "Пн",
+      "tuesday": "Вт",
+      "wednesday": "Ср",
+      "thursday": "Чт",
+      "friday": "Пт",
+      "saturday": "Сб",
+      "sunday": "Вс"
+    }
+  },
+  "forms": {
+    "add_new_post": "Добавить новый пост",
+    "title": "Заголовок",
+    "text": "Текст",
+    "add_image": "Добавить изображение",
+    "submit": "Добавить",
+    "save": "Сохранить",
+    "errors": {
+      "error_required": "Заголовок и текст обязательны",
+      "error_creation_failed": "Не удалось создать пост. Попробуйте позже.",
+      "error_updating_post": "Ошибка при обновлении поста",
+      "error_username_empty": "Имя не может быть пустым",
+      "error_invalid_phone": "Неверный номер телефона"
+    },
+    "placeholders": {
+      "title": "Введите заголовок",
+      "text": "Введите текст",
+      "username": "Введите имя пользователя",
+      "phone": "Введите номер телефона",
+      "password": "Введите пароль"
+    }
+  },
+  "auth": {
+    "authorization": "Авторизация",
+    "registration_title": "Регистрация",
+    "phone_number": "Номер телефона",
+    "password": "Пароль",
+    "no_account": "Нет аккаунта?",
+    "invalid_credentials": "Неверные учетные данные",
+    "already_have_account": "Уже есть аккаунт?",
+    "errors": {
+      "username_required": "Имя пользователя обязательно",
+      "invalid_phone": "Некорректный номер телефона",
+      "password_length": "Пароль должен содержать не менее 6 символов"
+    },
+    "toast": {
+      "registration_success": "Регистрация успешна!",
+      "correct_errors": "Пожалуйста, исправьте ошибки"
+    }
+  },
+  "posts": {
+    "posts_title": "Все посты",
+    "no_posts": "Нет доступных постов.",
+    "postImageAlt": "Изображение поста",
+    "error_message": "Ошибка: {{error}}"
+  },
+  "buttons": {
+    "confirm": "Подтвердить",
+    "cancel": "Отмена",
+    "submit_button": "Отправить",
+    "return": "Вернуться",
+    "send": "Отправить",
+    "enter": "Войти"
+  },
+  "booking": {
+    "details_of_booking": "Детали записи",
+    "name_surname": "Имя Фамилия",
+    "phone": "Телефон",
+    "procedure": "Процедура",
+    "time": "Время",
+    "date": "Дата",
+    "bookProcedure": "Записаться на процедуру",
+    "selected_procedure": "Выбранная процедура",
+    "booked": "Занято",
+    "booking": "Запись"
+  },
+  "users_page": {
+    "users_page_title": "Пользователи",
+    "no_users_found": "Пользователи не найдены"
+  }
+}

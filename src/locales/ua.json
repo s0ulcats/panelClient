@@ -1,0 +1,116 @@
+{
+  "navigation": {
+    "home": "Головна",
+    "add_post": "Додати пост",
+    "users": "Користувачі",
+    "recordings": "Записи",
+    "logout": "Вийти",
+    "settings": "Налаштування",
+    "direct": "Повідомлення"
+  },
+  "messages": {
+    "message_unavailable": "Повідомлення недоступне",
+    "attached": "Прикріплено",
+    "enter_message": "Введіть повідомлення",
+    "unknown_user": "Невідомий користувач"
+  },
+  "tooltips": {
+    "name": "Якщо це не ваше ім'я, змініть його в налаштуваннях.",
+    "phone": "Якщо це не ваш номер телефону, змініть його в налаштуваннях."
+  },
+  "calendar": {
+    "months": {
+      "january": "Січень",
+      "february": "Лютий",
+      "march": "Березень",
+      "april": "Квітень",
+      "may": "Травень",
+      "june": "Червень",
+      "july": "Липень",
+      "august": "Серпень",
+      "september": "Вересень",
+      "october": "Жовтень",
+      "november": "Листопад",
+      "december": "Грудень"
+    },
+    "days": {
+      "monday": "Пн",
+      "tuesday": "Вт",
+      "wednesday": "Ср",
+      "thursday": "Чт",
+      "friday": "Пт",
+      "saturday": "Сб",
+      "sunday": "Нд"
+    }
+  },
+  "forms": {
+    "add_new_post": "Додати новий пост",
+    "title": "Заголовок",
+    "text": "Текст",
+    "add_image": "Додати зображення",
+    "submit": "Додати",
+    "save": "Зберегти",
+    "errors": {
+      "error_required": "Заголовок та текст обов'язкові",
+      "error_creation_failed": "Не вдалося створити пост. Спробуйте пізніше.",
+      "error_updating_post": "Помилка при оновленні поста",
+      "error_username_empty": "Ім'я не може бути порожнім",
+      "error_invalid_phone": "Невірний номер телефону"
+    },
+    "placeholders": {
+      "title": "Введіть заголовок",
+      "text": "Введіть текст",
+      "username": "Введіть ім'я користувача",
+      "phone": "Введіть номер телефону",
+      "password": "Введіть пароль"
+    }
+  },
+  "auth": {
+    "authorization": "Авторизація",
+    "registration_title": "Реєстрація",
+    "phone_number": "Номер телефону",
+    "password": "Пароль",
+    "no_account": "Немає акаунта?",
+    "invalid_credentials": "Невірні облікові дані",
+    "already_have_account": "Вже є акаунт?",
+    "errors": {
+      "username_required": "Ім'я користувача обов'язкове",
+      "invalid_phone": "Некоректний номер телефону",
+      "password_length": "Пароль має бути не менше 6 символів"
+    },
+    "toast": {
+      "registration_success": "Реєстрація успішна!",
+      "correct_errors": "Будь ласка, виправте помилки"
+    }
+  },
+  "posts": {
+    "posts_title": "Усі пости",
+    "no_posts": "Немає доступних постів.",
+    "postImageAlt": "Зображення поста",
+    "error_message": "Помилка: {{error}}"
+  },
+  "buttons": {
+    "confirm": "Підтвердити",
+    "cancel": "Скасувати",
+    "submit_button": "Надіслати",
+    "return": "Повернутися",
+    "send": "Відправити",
+    "enter": "Війти"
+  },
+  "booking": {
+    "details_of_booking": "Деталі запису",
+    "name_surname": "Ім'я Прізвище",
+    "phone": "Телефон",
+    "procedure": "Процедура",
+    "time": "Час",
+    "date": "Дата",
+    "bookProcedure": "Записатися на процедуру",
+    "selected_procedure": "Вибрана процедура",
+    "booked": "Зайнято",
+    "booking": "Запис"
+  },
+  "users_page": {
+    "users_page_title": "Користувачі",
+    "no_users_found": "Користувачів не знайдено"
+  }
+}

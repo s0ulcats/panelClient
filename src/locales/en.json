@@ -1,0 +1,116 @@
+{
+  "navigation": {
+    "home": "Home",
+    "add_post": "Add Post",
+    "users": "Users",
+    "recordings": "Recordings",
+    "logout": "Log out",
+    "settings": "Settings",
+    "direct": "Direct"
+  },
+  "messages": {
+    "message_unavailable": "Message unavailable",
+    "attached": "Attached",
+    "enter_message": "Enter message",
+    "unknown_user": "Unknown user"
+  },
+  "tooltips": {
+    "name": "If this is not your name, change it in the settings.",
+    "phone": "If this is not your phone number, update it in the settings."
+  },
+  "calendar": {
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "days": {
+      "monday": "Mon",
+      "tuesday": "Tue",
+      "wednesday": "Wed",
+      "thursday": "Thu",
+      "friday": "Fri",
+      "saturday": "Sat",
+      "sunday": "Sun"
+    }
+  },
+  "forms": {
+    "add_new_post": "Add new post",
+    "title": "Title",
+    "text": "Text",
+    "add_image": "Add image",
+    "submit": "Add",
+    "save": "Save",
+    "errors": {
+      "error_required": "Title and text are required",
+      "error_creation_failed": "Failed to create post. Please try again later.",
+      "error_updating_post": "Error updating post",
+      "error_username_empty": "Username cannot be empty",
+      "error_invalid_phone": "Invalid phone number"
+    },
+    "placeholders": {
+      "title": "Enter the title",
+      "text": "Enter the text",
+      "username": "Enter your username",
+      "phone": "Enter your phone number",
+      "password": "Enter your password"
+    }
+  },
+  "auth": {
+    "authorization": "Authorization",
+    "registration_title": "Registration",
+    "phone_number": "Phone Number",
+    "password": "Password",
+    "no_account": "Do not have an account?",
+    "invalid_credentials": "Invalid Credentials",
+    "already_have_account": "Already have an account?",
+    "errors": {
+      "username_required": "Username is required",
+      "invalid_phone": "Invalid phone number",
+      "password_length": "Password must be at least 6 characters long"
+    },
+    "toast": {
+      "registration_success": "Registration successful!",
+      "correct_errors": "Please correct the errors"
+    }
+  },
+  "posts": {
+    "posts_title": "All Posts",
+    "no_posts": "No posts available.",
+    "postImageAlt": "Post visual",
+    "error_message": "Error: {{error}}"
+  },
+  "buttons": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "submit_button": "Submit",
+    "return": "Return",
+    "send": "Send",
+    "enter": "Enter"
+  },
+  "booking": {
+    "details_of_booking": "Booking Details",
+    "name_surname": "Full Name",
+    "phone": "Phone",
+    "procedure": "Procedure",
+    "time": "Time",
+    "date": "Date",
+    "bookProcedure": "Book Procedure",
+    "selected_procedure": "Selected Procedure",
+    "booked": "Busy",
+    "booking": "Booking"
+  },
+  "users_page": {
+    "users_page_title": "Users",
+    "no_users_found": "No users found"
+  }
+}

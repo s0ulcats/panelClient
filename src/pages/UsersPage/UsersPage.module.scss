@@ -1,0 +1,97 @@
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.searchInput {
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #000;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s, border-color 0.3s;
+  margin-bottom: 20px;
+}
+
+.searchInput:focus {
+  border-bottom: 2px solid #7a7a7a;
+  outline: none;
+}
+
+.usersContainer {
+  width: 100%;
+  max-width: 800px; /* Ограничение ширины контейнера */
+  margin: 0 auto;
+}
+
+.userList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.userItem {
+  display: flex;
+  align-items: center;
+  background-color: rgb(47, 47, 47);
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 4px 4px 48px 0px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative; /* Нужно для правильного расположения кнопки */
+}
+
+.userItem:hover {
+  border: 2px solid #7a7a7a;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.userIcon {
+  font-size: 30px;
+  color: var(--icon-color);
+  margin-right: 15px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .userList {
+    gap: 10px;
+  }
+
+  .userItem {
+    padding: 10px;
+  }
+}
+
+.deleteButton {
+  background-color: transparent;
+  color: #ff4747;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: auto; /* Прижимает кнопку к правому краю */
+  transition: color 0.3s ease;
+}
+
+.deleteButton:hover {
+  color: #ff2222;
+}
+
+.deleteButton:focus {
+  outline: none;
+}
