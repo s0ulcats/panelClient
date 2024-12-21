@@ -33,12 +33,13 @@ export const loginUser = createAsyncThunk('auth/loginUser', async ({ username, p
     }
 });
 
-export const getMe = createAsyncThunk('auth/me', async () => {
+export const getMe = createAsyncThunk('auth/me', async (_, { rejectWithValue }) => {
     try {
         const { data } = await axios.post('/auth/me');
         return data;
     } catch (error) {
         console.log(error);
+        return rejectWithValue('Failed to fetch user data'); 
     }
 });
 

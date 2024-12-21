@@ -14,6 +14,7 @@ function App() {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => Boolean(state.auth.token));
   const [loading, setLoading] = useState(true);
+  const [authFailed, setAuthFailed] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -21,14 +22,19 @@ function App() {
     // Если токен существует, попытаться получить данные пользователя
     if (token) {
       dispatch(getMe())
+        .catch(() => setAuthFailed(true)) // Если ошибка, изменим состояние
         .finally(() => setLoading(false));
     } else {
-      setLoading(false);
+      setLoading(false); // Нет токена, сразу прекращаем загрузку
     }
   }, [dispatch]);
 
   if (loading) {
-    return <div>Loading...</div>; // Показываем индикатор загрузки до получения данных
+    return <div>Loading...</div>; // Показываем индикатор загрузки
+  }
+
+  if (authFailed) {
+    return <div>Authentication Failed</div>; // Если ошибка при получении данных
   }
 
   return (
