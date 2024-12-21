@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -14,7 +14,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Suspense fallback={<div>Loading...</div>}>
       <BrowserRouter>
         <Provider store={store}>
           <ThemeProvider>
@@ -22,7 +21,6 @@ root.render(
           </ThemeProvider>
         </Provider>
       </BrowserRouter>
-    </Suspense>
   </React.StrictMode>
 );
 

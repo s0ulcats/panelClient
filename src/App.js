@@ -29,17 +29,12 @@ function App() {
     }
   }, [dispatch]);
 
-  if (loading) {
-    return <div>Loading...</div>; // Показываем индикатор загрузки
-  }
-
   if (authFailed) {
     return <div>Authentication Failed</div>; // Если ошибка при получении данных
   }
 
   return (
     <Layout>
-      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={isAuth ? <MainPage /> : <Navigate to="/login" />} />
@@ -47,7 +42,6 @@ function App() {
           <Route path="/users" element={isAuth ? <UsersPage /> : <Navigate to="/login" />} />
           <Route path="/user/:id" element={isAuth ? <UserProfileContainer /> : <Navigate to="/login" />} />
         </Routes>
-      </Suspense>
       <ToastContainer position="top-right" />
     </Layout>
   );
