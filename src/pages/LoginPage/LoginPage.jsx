@@ -23,15 +23,12 @@ export const LoginPage = () => {
   const handleSubmit = async () => {
     try {
         const response = await dispatch(loginUser({ username, password })).unwrap();
-        if (response.message) {
-            toast.success(response.message);
-        } else {
-            toast.success('Login Successful');
-        }
+        toast.success(response.message || 'Login Successful');
         setUsername('');
         setPassword('');
+        navigate('/');
     } catch (error) {
-        toast.error('Invalid Credentials');
+        toast.error(error || 'Invalid Credentials');
     }
 };
 

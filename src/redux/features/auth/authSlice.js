@@ -20,7 +20,7 @@ export const registerUser = createAsyncThunk('auth/registerUser', async ({ usern
 });
 
 
-export const loginUser = createAsyncThunk('auth/loginUser', async ({ username, password }) => {
+export const loginUser = createAsyncThunk('auth/loginUser', async ({ username, password }, { rejectWithValue }) => {
     try {
         const { data } = await axios.post('/auth/login', { username, password });
         if (data.token) {
@@ -28,10 +28,8 @@ export const loginUser = createAsyncThunk('auth/loginUser', async ({ username, p
         }
         return data;
     } catch (error) {
-        console.log(error);
-        // Обработаем ошибки, полученные от сервера
         const message = error.response?.data?.message || 'Error with credentials';
-        return { message };
+        return rejectWithValue(message); // Отправляем ошибку через rejectWithValue
     }
 });
 
@@ -82,9 +80,9 @@ export const authSlice = createSlice({
                 window.localStorage.setItem('token', action.payload?.token || '');
             })
             .addCase(loginUser.rejected, (state, action) => {
-                state.status = action.payload?.message || action.error.message || 'Login failed';
+                state.status = action.payload || 'Login failed';
                 state.isLoading = false;
-            })
+            })            
             .addCase(getMe.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.status = action.payload?.message || 'User data fetched';
