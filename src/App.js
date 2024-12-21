@@ -1,17 +1,18 @@
 import React, { Suspense, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Layout from './components/Layout/Layout.jsx';
-import UserProfileContainer from './components/UserProfile/UserProfileContainer.jsx';
-import { LoginPage } from './pages/LoginPage/LoginPage.jsx';
+import { getMe } from './redux/features/auth/authSlice';
 import { MainPage } from './pages/MainPage/MainPage.jsx';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage.jsx';
+import { LoginPage } from './pages/LoginPage/LoginPage.jsx';
 import UsersPage from './pages/UsersPage/UsersPage.jsx';
-import { getMe } from './redux/features/auth/authSlice';
+import UserProfileContainer from './components/UserProfile/UserProfileContainer.jsx';
 
 function App() {
   const dispatch = useDispatch();
+  const isAuth = useSelector((state) => Boolean(state.auth.token));
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -35,10 +36,10 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={<MainPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/users" element={<UsersPage />} />
-          <Route path="/user/:id" element={<UserProfileContainer />} />
+          <Route path="/" element={isAuth ? <MainPage /> : <Navigate to="/login" />} />
+          <Route path="/register" element={isAuth ? <RegisterPage /> : <Navigate to="/login" />} />
+          <Route path="/users" element={isAuth ? <UsersPage /> : <Navigate to="/login" />} />
+          <Route path="/user/:id" element={isAuth ? <UserProfileContainer /> : <Navigate to="/login" />} />
         </Routes>
       </Suspense>
       <ToastContainer position="top-right" />

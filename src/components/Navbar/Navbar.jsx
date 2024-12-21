@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { AiOutlineUser } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { checkIsAuth, getMe, logout } from '../../redux/features/auth/authSlice';
 import Logo from './Logo.png';
 import s from './Navbar.module.scss';
+import { AiOutlineUser } from 'react-icons/ai';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -36,10 +36,14 @@ const Navbar = () => {
         <NavLink to="/">
           <img className={s.logo} src={Logo} alt="Logo" />
         </NavLink>
-        <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyles : undefined)}>Register</NavLink>
-        <NavLink to="/users" style={({ isActive }) => (isActive ? activeStyles : undefined)}>
-          <AiOutlineUser /> {'Users'}
-        </NavLink>
+        {isAuth && authUser && authUser.username === 'specta' && (
+          <>
+            <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyles : undefined)}>Register</NavLink>
+            <NavLink to="/users" style={({ isActive }) => (isActive ? activeStyles : undefined)}>
+              <AiOutlineUser /> {'Users'}
+            </NavLink>
+          </>
+        )}
         {isAuth ? (
           <button onClick={logoutHandler} className={s.logoutBtn}>
             LOGOUT
