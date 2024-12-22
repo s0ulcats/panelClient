@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getTokenLogs } from '../../redux/features/auth/authSlice'; // Импортируем правильное действие
+import { deleteUserById, getUserById } from '../../redux/features/users/usersSlice';
 import UserProfile from './UserProfile';
-import { getUserById, deleteUserById } from '../../redux/features/users/usersSlice';
-import { getTokenLogs } from '../../redux/features/auth/authSlice';  // Import the correct action
 import Preloader from '../Preloader/Preloader';
 
 const UserProfileContainer = () => {
@@ -35,13 +35,13 @@ const UserProfileContainer = () => {
     const handleDeleteUser = async () => {
         try {
             await dispatch(deleteUserById(user._id));
-            navigate('/users');
+            navigate('/ugmXUScE1Ic9TdHUNhnKi');
         } catch (error) {
             console.error("Ошибка при удалении пользователя", error);
         }
     };
 
-    if (userLoading || tokenLogsLoading) return <Preloader />;
+    if (userLoading || tokenLogsLoading) return <Preloader />
     if (userError) return <div>Error: {userError}</div>;
 
     if (tokenLogsError) {

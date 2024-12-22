@@ -28,7 +28,7 @@ const UsersPage = () => {
   }, [searchTerm, users, currentUser]);
 
   const handleUserClick = (id) => {
-    navigate(`/user/${id}`);
+    navigate(`/usdmRMKIa64EOQ9nVrBCCxD/${id}`);
   };
 
   const handleDeleteUser = async (id) => {

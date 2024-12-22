@@ -1,47 +1,48 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import Layout from './components/Layout/Layout.jsx';
-import { getMe } from './redux/features/auth/authSlice';
+import UserProfileContainer from './components/UserProfile/UserProfileContainer.jsx';
+import { LoginPage } from './pages/LoginPage/LoginPage.jsx';
 import { MainPage } from './pages/MainPage/MainPage.jsx';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage.jsx';
-import { LoginPage } from './pages/LoginPage/LoginPage.jsx';
 import UsersPage from './pages/UsersPage/UsersPage.jsx';
-import UserProfileContainer from './components/UserProfile/UserProfileContainer.jsx';
+import { getMe } from './redux/features/auth/authSlice';
+import Preloader from './components/Preloader/Preloader.jsx';
 
 function App() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const isAuth = useSelector((state) => Boolean(state.auth.token));
-  const [loading, setLoading] = useState(true);
-  const [authFailed, setAuthFailed] = useState(false);
+  const [loading, setLoading] = useState(true); // Добавляем состояние загрузки
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    
-    // Если токен существует, попытаться получить данные пользователя
     if (token) {
-      dispatch(getMe())
-        .catch(() => setAuthFailed(true)) // Если ошибка, изменим состояние
-        .finally(() => setLoading(false));
+      dispatch(getMe()).finally(() => setLoading(false)); // Завершаем загрузку
     } else {
-      setLoading(false); // Нет токена, сразу прекращаем загрузку
+      setLoading(false); // Если токен нет, сразу завершаем загрузку
+      navigate('/'); // Перенаправляем на страницу входа, если нет токена
     }
-  }, [dispatch]);
+}, [dispatch, navigate]);
 
-  if (authFailed) {
-    return <div>Authentication Failed</div>; // Если ошибка при получении данных
+
+  if (loading) {
+    return <div><Preloader /></div>; // Показываем индикатор загрузки
   }
 
   return (
     <Layout>
+      <Suspense fallback={<div><Preloader /></div>}>
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={isAuth ? <MainPage /> : <Navigate to="/login" />} />
-          <Route path="/register" element={isAuth ? <RegisterPage /> : <Navigate to="/login" />} />
-          <Route path="/users" element={isAuth ? <UsersPage /> : <Navigate to="/login" />} />
-          <Route path="/user/:id" element={isAuth ? <UserProfileContainer /> : <Navigate to="/login" />} />
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/meIcwHn8S5YlY9ArdJFJr" element={<MainPage />} />
+          <Route path="/r5vJ1NCy8H0wwe4WjAALc" element={<RegisterPage />} />
+          <Route path="/ugmXUScE1Ic9TdHUNhnKi" element={<UsersPage />} />
+          <Route path="/usdmRMKIa64EOQ9nVrBCCxD/:id" element={<UserProfileContainer />} />
         </Routes>
+      </Suspense>
       <ToastContainer position="top-right" />
     </Layout>
   );

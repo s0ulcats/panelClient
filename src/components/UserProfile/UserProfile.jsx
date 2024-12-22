@@ -1,13 +1,13 @@
 import React from 'react';
-import Preloader from '../Preloader/Preloader';
 import s from './UserProfile.module.scss';
+import Preloader from '../Preloader/Preloader';
 
 const UserProfile = ({ user, tokenLogs, currentUser, handleDeleteUser }) => {
     if (!user) {
-        return <Preloader />;
+        return <Preloader />
     }
 
-    const avatar = user.username.trim().toUpperCase().split('').slice(0, 1).join(''); 
+    const avatar = user.username.trim().toUpperCase().split('').slice(0, 2).join('');  // Используем первые 2 буквы для аватара
 
     console.log("Rendering user profile for:", user.username);  // Отладочный вывод
     console.log("Token logs:", tokenLogs);  // Отладочный вывод
