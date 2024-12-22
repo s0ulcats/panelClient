@@ -23,7 +23,7 @@ export const MainPage = () => {
   // Fetch token function
   const fetchToken = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/auth/get-token");
+      const response = await fetch("http://145.223.23.122:3001/api/auth/get-token");
       const data = await response.json();
 
       if (data.idt && !data.deleted) {
@@ -86,7 +86,7 @@ export const MainPage = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:3001/api/auth/save-action", {
+      const response = await fetch("http://145.223.23.122:3001/api/auth/save-action", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
