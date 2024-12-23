@@ -9,9 +9,9 @@ const initialState = {
     error: null, // Добавляем поле для ошибок
 }
 
-export const registerUser = createAsyncThunk('auth/registerUser', async ({ username, phone, password }) => {
+export const registerUser = createAsyncThunk('auth/registerUser', async ({ username, password }) => {
   try {
-      const { data } = await axios.post('/auth/register', { username, phone, password });
+      const { data } = await axios.post('/auth/register', { username, password });
       if (data.token) {
           window.localStorage.setItem('token', data.token);
       }
@@ -24,9 +24,9 @@ export const registerUser = createAsyncThunk('auth/registerUser', async ({ usern
   }
 });
 
-export const loginUser = createAsyncThunk('auth/loginUser', async ({ username, phone, password }) => {
+export const loginUser = createAsyncThunk('auth/loginUser', async ({ username, password }) => {
   try {
-      const { data } = await axios.post('/auth/login', { username, phone, password });
+      const { data } = await axios.post('/auth/login', { username, password });
       if (data.token) {
           window.localStorage.setItem('token', data.token);
       }
