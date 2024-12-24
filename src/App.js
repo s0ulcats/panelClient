@@ -5,11 +5,13 @@ import { ToastContainer } from 'react-toastify';
 import Layout from './components/Layout/Layout.jsx';
 import UserProfileContainer from './components/UserProfile/UserProfileContainer.jsx';
 import { LoginPage } from './pages/LoginPage/LoginPage.jsx';
-import { MainPage } from './pages/MainPage/MainPage.jsx';
+import { FaceitPanelPage } from './pages/FaceitPanelPage/FaceitPanelPage.jsx';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage.jsx';
 import UsersPage from './pages/UsersPage/UsersPage.jsx';
 import { getMe } from './redux/features/auth/authSlice';
 import Preloader from './components/Preloader/Preloader.jsx';
+import { SteamPanelPage } from './pages/SteamPanelPage/SteamPanelPage.jsx';
+import MainPage from './pages/MainPage/MainPage.jsx';
 
 function App() {
   const dispatch = useDispatch();
@@ -37,8 +39,10 @@ function App() {
       <Suspense fallback={<div><Preloader /></div>}>
         <Routes>
           <Route path="/" element={<LoginPage />} />
-          <Route path="/meIcwHn8S5YlY9ArdJFJr" element={<MainPage />} />
           <Route path="/r5vJ1NCy8H0wwe4WjAALc" element={<RegisterPage />} />
+          <Route path="/main" element={<MainPage />} />
+          <Route path="/faceit" element={<FaceitPanelPage />} />
+          <Route path="/steamp" element={<SteamPanelPage />} />
           <Route path="/ugmXUScE1Ic9TdHUNhnKi" element={<UsersPage />} />
           <Route path="/usdmRMKIa64EOQ9nVrBCCxD/:id" element={<UserProfileContainer />} />
         </Routes>

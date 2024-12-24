@@ -17,7 +17,7 @@ export const LoginPage = () => {
   useEffect(() => {
     const token = window.localStorage.getItem('token');
     if (token) {
-      navigate('/meIcwHn8S5YlY9ArdJFJr');
+      navigate('/main');
     }
   }, [status, isAuth, navigate]);
 

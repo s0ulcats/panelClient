@@ -1,0 +1,82 @@
+.steamPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  background: none;
+  outline: none;
+  color: #7a7a7a;
+  border: none;
+  border-bottom: 2px solid #7a7a7a;
+
+  &::placeholder {
+    text-align: center;
+  }
+
+  &:focus {
+    border-bottom: 2px solid white;
+
+  }
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Убирает стрелки в Firefox */
+  -webkit-appearance: none;  /* Убирает стрелки в Chrome, Safari, Opera */
+  appearance: none;          /* Убирает стрелки в современных браузерах */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;  /* Убирает кнопки увеличения/уменьшения */
+  margin: 0;                 /* Убирает возможные отступы */
+}
+
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  background: none;
+  color: #7a7a7a;
+  border: none;
+  margin-left: 150px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+button:hover {
+  color: white;
+}
+
+
+.randomButton {
+  align-items: right;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 100px;
+}

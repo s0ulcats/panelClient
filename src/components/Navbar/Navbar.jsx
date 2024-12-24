@@ -22,7 +22,7 @@ const Navbar = () => {
     if (token && !authUser) {
       dispatch(getMe()); // Получение данных пользователя только если токен есть
     }
-  }, [dispatch, authUser]);  
+  }, [dispatch, authUser]);
 
   const logoutHandler = () => {
     dispatch(logout());
@@ -35,9 +35,11 @@ const Navbar = () => {
   return (
     <nav className={`${s.nav}`}>
       <div className={s.container}>
-        <NavLink to="/meIcwHn8S5YlY9ArdJFJr">
-          <img className={s.logo} src={Logo} alt="Logo" />
-        </NavLink>
+        {isAuth && (
+          <NavLink to="/main">
+            <img className={s.logo} src={Logo} alt="Logo" />
+          </NavLink>
+        )}
         {isAuth && authUser && authUser.username === 'specta' && (
           <>
             <NavLink to="/r5vJ1NCy8H0wwe4WjAALc" style={({ isActive }) => (isActive ? activeStyles : undefined)}>Register</NavLink>
@@ -47,9 +49,9 @@ const Navbar = () => {
           </>
         )}
         {isAuth ? (
-          <button onClick={logoutHandler} className={s.logoutBtn}>
-            LOGOUT
-          </button>
+            <button onClick={logoutHandler} className={s.logoutBtn}>
+              LOGOUT
+            </button>
         ) : (
           <Link to="/" className={s.loginBtn}>
             Enter
