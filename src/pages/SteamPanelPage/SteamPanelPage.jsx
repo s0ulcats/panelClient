@@ -34,7 +34,7 @@ export const SteamPanelPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3001/api/steam', {
+      const response = await axios.post('http://145.223.23.122:80/api/steam', {
         ...formData,
         username,
       });

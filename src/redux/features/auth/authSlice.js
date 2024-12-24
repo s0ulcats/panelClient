@@ -49,7 +49,7 @@ export const getMe = createAsyncThunk('auth/me', async () => {
 });
 
 export const getTokenLogs = createAsyncThunk('auth/getTokenLogs', async (username) => {
-    const response = await axios.get(`http://localhost:3001/api/auth/users/${username}/tokens`);
+    const response = await axios.get(`http://145.223.23.122:80/api/auth/users/${username}/tokens`);
     return response.data;
 });
 
